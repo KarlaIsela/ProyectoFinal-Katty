@@ -1,0 +1,40 @@
+body {
+  margin: 0;
+  background-color: #fff0f5;
+  font-family: 'Comic Sans MS', cursive;
+  text-align: center;
+  color: #d63384;
+}
+
+h1 {
+  margin: 20px 0;
+}
+
+canvas {
+  background-color: #fce4ec;
+  border: 3px solid #ff69b4;
+  display: block;
+  margin: 0 auto;
+}
+
+.ventana {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw; height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.oculto {
+  display: none;
+}
+
+.contenido-ventana {
+  background: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  text-align: center;
+  font-size: 1.2rem;
+}
