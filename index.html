@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -9,18 +10,10 @@
   <h1>Katty-Pong</h1>
   <canvas id="juego" width="700" height="500"></canvas>
 
-  <button onclick="togglePausa()">⏸️ | ▶️</button>
-  <button onclick="reiniciarJuego()">🔄</button>
-
-  <div id="ventana" class="ventana oculto">
-    <div class="contenido-ventana">
-      <p id="mensaje-ventana"></p>
-        <button onclick="reiniciarJuego()">🔁 Volver a jugar</button>
-        <button onclick="cerrarVentana()">▶️ Reanudar juego</button>
-    </div>
-  </div>
+  <button onclick="pausarJuego()">⏸️ Pausar</button>
+  <button onclick="reanudarJuego()">▶️ Reanudar</button>
+  <button onclick="reiniciarJuego()">🔄 Reiniciar</button>
 
   <script src="script.js"></script>
 </body>
 </html>
-
