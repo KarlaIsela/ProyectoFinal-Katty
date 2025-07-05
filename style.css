@@ -56,12 +56,14 @@ button {
 .btn-pausa {
   background-color: #ff62b4;
   transition: all 0.3s ease;
-
 }
 
-.btn-pausa:active {
+.btn-pausa:hover {
   background-color: #ff1e94;
-  box-shadow: 0 0 10px #ff94d1, 0 0 12px #ff1e94;
+}
+
+.btn-pausa.active {
+  background-color: #ff1e94;  /* color más fuerte cuando está activo */
   transform: scale(1.05);
 }
 
@@ -71,10 +73,13 @@ button {
   transition: all 0.3s ease;
 }
 
-.btn-reanudar.activo {
-  background-color: #d24cf3;
-  transform: scale(1.05);
-  box-shadow: 0 0 12px #e0aaff;
+.btn-reanudar:hover {
+  background-color: #865f9a;
+}
+
+.btn-reanudar:active {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3) inset;
+  transform: scale(0.75);
 }
 
 /* Botón Reiniciar */
@@ -83,12 +88,11 @@ button {
 }
 
 .btn-reiniciar:hover {
-  background-color: #865f9a;
+  background-color: #5f7a9a;
 }
 
 /* Animación "botón hundido" para Reiniciar */
 .btn-reiniciar:active {
-  top: 2px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3) inset;
-  transform: scale(0.96);
+  transform: scale(0.75);
 }
