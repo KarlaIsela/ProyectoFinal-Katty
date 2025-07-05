@@ -1,4 +1,3 @@
-
 const lienzo = document.getElementById("juego");
 const pincel = lienzo.getContext("2d");
 
@@ -94,9 +93,13 @@ function moverpelotita() {
     reiniciarpelotita();
   }
 
-  if (puntosKatty >= 5 || puntosEnemigo >= 5) {
-    enPausa = true;
+  
+  if (puntosKatty >= 5) {
+    mostrarVentana("¡Katty ha ganado! 🐾ฅ^>⩊<^ ฅ");
+  } else if (puntosEnemigo >= 5) {
+    mostrarVentana("Oh no... ¡el rey ratón ganó! 🐭");
   }
+
 }
 
 function colisiona(p, r) {
@@ -113,7 +116,7 @@ function reiniciarpelotita() {
   pelotita.y = alto / 2;
   pelotita.velocidadX *= -1;
   pelotita.velocidadY = 5 * (Math.random() > 0.5 ? 1 : -1);
-} 
+}
 
 function pausarJuego() {
   enPausa = true;
@@ -124,6 +127,7 @@ function reanudarJuego() {
 }
 
 function reiniciarJuego() {
+  cerrarVentana();
   puntosKatty = 0;
   puntosEnemigo = 0;
   pelotita.x = ancho / 2;
@@ -139,6 +143,17 @@ function dibujarTodo() {
   dibujarRectangulo(enemigo);
   dibujarCirculo(pelotita);
   dibujarTexto();
+}
+
+
+function mostrarVentana(mensaje) {
+  document.getElementById("mensaje-ventana").textContent = mensaje;
+  document.getElementById("ventana").classList.remove("oculto");
+  enPausa = true;
+}
+
+function cerrarVentana() {
+  document.getElementById("ventana").classList.add("oculto");
 }
 
 function actualizar() {
