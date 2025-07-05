@@ -57,16 +57,33 @@ button {
   background-color: #ff62b4;
 }
 
+.btn-pausa:active {
+  transform: scale(0.95) rotate(-1deg);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
 /* Botón Reanudar */
 .btn-reanudar {
-  background-color: 	#ff81e3;
+  background-color: #ff81e3;
+}
+
+.btn-reanudar:active {
+  transform: scale(0.95) rotate(1deg);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 /* Botón Reiniciar */
 .btn-reiniciar {
   background-color: #fc9fff;
 }
+
 .btn-reiniciar:hover {
   background-color: #865f9a;
 }
 
+/* Animación "botón hundido" para Reiniciar */
+.btn-reiniciar:active {
+  top: 2px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3) inset;
+  transform: scale(0.96);
+}
