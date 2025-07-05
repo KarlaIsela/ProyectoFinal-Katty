@@ -2,14 +2,9 @@
 
 const sonidoPelotita = new Audio('media/ping.mp3');          // rebote contra paletas
 const sonidoChoque = new Audio('media/choque.mp3');   // rebote contra arriba/abajo
-//const sonidoDesplazar = new Audio('media/pong.mp3');       // movimiento continuo
 const sonidoGanar = new Audio('media/ganar.mp3');          // cuando gana Katty
 const sonidoPerder = new Audio('media/perder.mp3');        // cuando gana el enemigo
 const sonidoClick = new Audio('media/click.mp3');          // al hacer clic en botones
-
-sonidoDesplazar.loop = true;
-sonidoDesplazar.volume = 0.2;
-
 
 const lienzo = document.getElementById("juego");
 const pincel = lienzo.getContext("2d");
