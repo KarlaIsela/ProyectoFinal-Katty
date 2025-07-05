@@ -1,3 +1,16 @@
+/* Agregando sonidos */
+
+const sonidoPelotita = new Audio('media/ping.mp3');          // rebote contra paletas
+const sonidoChoque = new Audio('media/choque.mp3');   // rebote contra arriba/abajo
+//const sonidoDesplazar = new Audio('media/pong.mp3');       // movimiento continuo
+const sonidoGanar = new Audio('media/ganar.mp3');          // cuando gana Katty
+const sonidoPerder = new Audio('media/perder.mp3');        // cuando gana el enemigo
+const sonidoClick = new Audio('media/click.mp3');          // al hacer clic en botones
+
+sonidoDesplazar.loop = true;
+sonidoDesplazar.volume = 0.2;
+
+
 const lienzo = document.getElementById("juego");
 const pincel = lienzo.getContext("2d");
 
@@ -75,28 +88,38 @@ function moverpelotita() {
     pelotita.velocidadY *= -1;
   }
 
-  if (colisiona(pelotita, katty)) {
+  if (colisiona(pelotita, katty)) {    
+    sonidoPelotita.currentTime = 0;
+    sonidoPelotita.play();
     pelotita.velocidadX *= -1;
     pelotita.x = katty.x + katty.ancho + pelotita.radio;
   }
 
   if (colisiona(pelotita, enemigo)) {
+    sonidoPelotita.currentTime = 0;
+    sonidoPelotita.play();
     pelotita.velocidadX *= -1;
     pelotita.x = enemigo.x - pelotita.radio;
   }
 
   if (pelotita.x - pelotita.radio < 0) {
+    sonidoChoque.currentTime = 0;
+    sonidoChoque.play(); 
     puntosEnemigo++;
     reiniciarpelotita();
   } else if (pelotita.x + pelotita.radio > ancho) {
+    sonidoChoque.currentTime = 0;
+    sonidoChoque.play(); 
     puntosKatty++;
     reiniciarpelotita();
   }
 
   
   if (puntosKatty >= 5) {
+    sonidoGanar.play();
     mostrarVentana("¡Katty ha ganado! 🐾ฅ^>⩊<^ ฅ");
   } else if (puntosEnemigo >= 5) {
+    sonidoPerder.play();
     mostrarVentana("Oh no... ¡el rey ratón ganó! 🐭");
   }
 
@@ -161,7 +184,6 @@ function dibujarTodo() {
   dibujarTexto();
 }
 
-
 function mostrarVentana(mensaje) {
   document.getElementById("mensaje-ventana").textContent = mensaje;
   document.getElementById("ventana").classList.remove("oculto");
@@ -189,6 +211,18 @@ document.addEventListener("keydown", (e) => {
 
 document.addEventListener("keyup", () => {
   katty.direccion = 0;
+});
+
+document.querySelectorAll("button").forEach(boton => {
+  boton.addEventListener("click", () => {
+    sonidoClick.currentTime = 0;
+    sonidoClick.play();
+
+    setTimeout(() => {
+      sonidoClick.pause();
+      sonidoClick.currentTime = 0; // Reiniciar para futuros clics
+    }, 300); // 300 ms = 0.3 segundos
+  });
 });
 
 actualizar();
