@@ -38,3 +38,17 @@ canvas {
   text-align: center;
   font-size: 1.2rem;
 }
+
+button {
+  border: none;
+  border-radius: 30px;
+  padding: 12px 24px;
+  font-size: 1.1rem;
+  font-family: 'Comic Sans MS', cursive;
+  cursor: pointer;
+  margin: 10px;
+  transition: all 0.3s ease;
+  color: white;
+  text-shadow: 1px 2px 0.5px rgba(0, 0, 0, 0.2);
+}
+
