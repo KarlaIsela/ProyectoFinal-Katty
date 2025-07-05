@@ -118,12 +118,28 @@ function reiniciarpelotita() {
   pelotita.velocidadY = 5 * (Math.random() > 0.5 ? 1 : -1);
 }
 
+function actualizarBotonesEstado() {
+  const btnPausa = document.querySelector(".btn-pausa");
+  const btnReanudar = document.querySelector(".btn-reanudar");
+  const btnReiniciar = document.querySelector(".btn-reiniciar");
+
+  if (enPausa) {
+    btnPausa.classList.add("active");
+    btnReiniciar.disabled = true; // Reanudar también deshabilitado.
+  } else {
+    btnPausa.classList.remove("active");
+    btnReiniciar.disabled = false; // Reanudar habilitado.
+  }
+}
+
 function pausarJuego() {
   enPausa = true;
+  actualizarBotonesEstado();
 }
 
 function reanudarJuego() {
   enPausa = false;
+  actualizarBotonesEstado();
 }
 
 function reiniciarJuego() {
