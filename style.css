@@ -65,15 +65,16 @@ button {
   transform: scale(1.05);
 }
 
-
 /* Botón Reanudar */
 .btn-reanudar {
   background-color: #ff81e3;
+  transition: all 0.3s ease;
 }
 
-.btn-reanudar:active {
-  transform: scale(0.95) rotate(1deg);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+.btn-reanudar.activo {
+  background-color: #d24cf3;
+  transform: scale(1.05);
+  box-shadow: 0 0 12px #e0aaff;
 }
 
 /* Botón Reiniciar */
