@@ -55,12 +55,16 @@ button {
 /* Botón Pausar */
 .btn-pausa {
   background-color: #ff62b4;
+  transition: all 0.3s ease;
+
 }
 
 .btn-pausa:active {
-  transform: scale(0.95) rotate(-1deg);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  background-color: #ff1e94;
+  box-shadow: 0 0 10px #ff94d1, 0 0 12px #ff1e94;
+  transform: scale(1.05);
 }
+
 
 /* Botón Reanudar */
 .btn-reanudar {
